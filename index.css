@@ -11,8 +11,22 @@ body {
   flex-direction: column;
 }
 
+.button {
+  border-radius: 1000rem;
+  background-color: yellow;
+  padding: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-weight: bold;
+  font-size: medium;
+}
+
 h1, h2, h3, h4 {
   font-weight: 600;
+}
+
+s {
+  color: var(--muted)
 }
 
 #header {
@@ -24,11 +38,12 @@ h1, h2, h3, h4 {
 #content {
   padding: 1rem;
   padding-top: 6rem;
+  padding-bottom: 6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 6rem;
+  gap: 10rem;
 }
 
 #intro {
@@ -99,11 +114,16 @@ h1, h2, h3, h4 {
 .card .carousel {
   display: flex;
   flex-direction: row;
-  gap: 1;
+  gap: 0.75rem;
   overflow-x: scroll;
-  scrollbar-width: 0px;
   border-radius: 0.5rem;
-  
+  aspect-ratio: 1.25;
+}
+
+.card .text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .card h1 {
@@ -114,4 +134,67 @@ h1, h2, h3, h4 {
   flex-grow: 1;
   width: 100%;
   height: auto;
+}
+
+#share {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem; 
+}
+
+#share h1 {
+  text-align: center;
+}
+
+#share video {
+  max-height: 8rem;
+  width: 100%;
+}
+
+.input {
+  padding: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  border-radius: 1rem;
+  background-color: var(--neutral);
+  width: fit-content;
+}
+
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid var(--foreground); /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  animation: 
+    typing 3.5s steps(18, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--foreground) }
+}
+
+#footer {
+  padding: 2rem;
+}
+
+#footer ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  list-style: none;
+}
+
+a {
+  color: var(--muted);
+  text-decoration: none;
 }
