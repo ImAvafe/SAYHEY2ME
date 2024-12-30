@@ -11,19 +11,7 @@ body {
   flex-direction: column;
 }
 
-h1 {
-  font-weight: 600;
-}
-
-h2 {
-  font-weight: 600;
-}
-
-h3 {
-  font-weight: 600;
-}
-
-h4 {
+h1, h2, h3, h4 {
   font-weight: 600;
 }
 
@@ -34,7 +22,7 @@ h4 {
 }
 
 #content {
-  padding: 2rem;
+  padding: 1rem;
   padding-top: 6rem;
   display: flex;
   flex-direction: column;
@@ -51,25 +39,26 @@ h4 {
   text-align: center;
   gap: 2rem;
   max-width: 40rem;
+  margin-bottom: 2rem;
 }
 
 .waver {
-  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
-  animation-duration: 2.5s;        /* Change to speed up or slow down */
-  animation-iteration-count: infinite;  /* Never stop waving :) */
+  animation-name: wave-animation;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
   transform-origin: 70% 70%;
   display: inline-block;
 }
 
 @keyframes wave-animation {
-    0% { transform: rotate( 0.0deg) }
-   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
-   20% { transform: rotate(-8.0deg) }
-   30% { transform: rotate(14.0deg) }
-   40% { transform: rotate(-4.0deg) }
-   50% { transform: rotate(10.0deg) }
-   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
-  100% { transform: rotate( 0.0deg) }
+  0% { transform: rotate(0.0deg); }
+  10% { transform: rotate(14.0deg); }
+  20% { transform: rotate(-8.0deg); }
+  30% { transform: rotate(14.0deg); }
+  40% { transform: rotate(-4.0deg); }
+  50% { transform: rotate(10.0deg); }
+  60% { transform: rotate(0.0deg); }
+  100% { transform: rotate(0.0deg); }
 }
 
 #intro h1 {
@@ -82,8 +71,10 @@ h4 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 2rem;
+  width: 100%;
+  max-width: 32rem;
+  flex-grow: 1;
 }
 
 .card {
@@ -95,6 +86,24 @@ h4 {
   background-color: var(--neutral);
   border-radius: 1rem;
   text-align: center;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  transition: transform 0.1s ease-in-out;
+}
+
+.card:hover {
+  transform: rotate(-2deg);
+}
+
+.card .carousel {
+  display: flex;
+  flex-direction: row;
+  gap: 1;
+  overflow-x: scroll;
+  scrollbar-width: 0px;
+  border-radius: 0.5rem;
+  
 }
 
 .card h1 {
@@ -103,6 +112,6 @@ h4 {
 
 .card img {
   flex-grow: 1;
-  /* box-shadow: 0 0 50px 50px white inset; */
-  border-radius: 0.5rem;
+  width: 100%;
+  height: auto;
 }
